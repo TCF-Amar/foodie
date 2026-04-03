@@ -9,6 +9,7 @@ class AppInputField extends StatefulWidget {
 
   // ── Labels & Hints ────────────────────────────────────────────
   final String? label;
+  final bool? showLabel;
   final String? hint;
   final String? helperText;
   final String? errorText;
@@ -141,6 +142,7 @@ class AppInputField extends StatefulWidget {
     this.onFieldSubmitted,
     this.onSaved,
     this.validator,
+    this.showLabel,
   }) : _variant = _FieldVariant.normal;
 
   // ─────────────────────────────────────────────
@@ -151,6 +153,7 @@ class AppInputField extends StatefulWidget {
     this.controller,
     this.focusNode,
     this.label = 'Email',
+    this.showLabel,
     this.hint = 'you@example.com',
     this.helperText,
     this.errorText,
@@ -217,6 +220,8 @@ class AppInputField extends StatefulWidget {
     this.controller,
     this.focusNode,
     this.label = 'Password',
+    this.showLabel,
+
     this.hint = 'Enter your password',
     this.helperText,
     this.errorText,
@@ -282,8 +287,10 @@ class AppInputField extends StatefulWidget {
     super.key,
     this.controller,
     this.focusNode,
+    this.showLabel,
+
     this.label = 'Phone Number',
-    this.hint = '+91 00000 00000',
+    this.hint = '9876543210',
     this.helperText,
     this.errorText,
     this.counterText,
@@ -350,6 +357,8 @@ class AppInputField extends StatefulWidget {
     this.focusNode,
     this.label,
     this.hint = 'Search...',
+    this.showLabel,
+
     this.helperText,
     this.errorText,
     this.counterText,
@@ -415,6 +424,8 @@ class AppInputField extends StatefulWidget {
     this.controller,
     this.focusNode,
     this.label,
+    this.showLabel,
+
     this.hint = 'Write something...',
     this.helperText,
     this.errorText,
@@ -484,6 +495,8 @@ class AppInputField extends StatefulWidget {
     this.controller,
     this.focusNode,
     this.label,
+    this.showLabel,
+
     this.hint = '·',
     this.helperText,
     this.errorText,
@@ -745,7 +758,7 @@ class _AppInputFieldState extends State<AppInputField> {
       onSaved: widget.onSaved,
       validator: widget.validator,
       decoration: InputDecoration(
-        labelText: widget.label,
+        labelText: widget.showLabel == false ? null : widget.label,
         hintText: widget.hint,
         helperText: widget.helperText,
         errorText: widget.errorText,
