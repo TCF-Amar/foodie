@@ -1,0 +1,35 @@
+﻿class AppIcons {
+  static const String bell = 'assets/icons/bell.svg';
+  static const String call = 'assets/icons/call.svg';
+  static const String car = 'assets/icons/car.svg';
+  static const String camera = 'assets/icons/cemara.svg';
+  static const String check = 'assets/icons/check.svg';
+  static const String circleCheck = 'assets/icons/circle_check.svg';
+  static const String creditCard = 'assets/icons/credit_card.svg';
+  static const String cross = 'assets/icons/cross.svg';
+  static const String eye = 'assets/icons/eye.svg';
+  static const String eyeSlash = 'assets/icons/eye_slash.svg';
+  static const String filter = 'assets/icons/filter.svg';
+  static const String heart = 'assets/icons/heart.svg';
+  static const String home = 'assets/icons/home.svg';
+  static const String icon = 'assets/icons/Icon.svg';
+  static const String info = 'assets/icons/info.svg';
+  static const String logout = 'assets/icons/logout.svg';
+  static const String menu = 'assets/icons/menu.svg';
+  static const String message = 'assets/icons/message.svg';
+  static const String micOff = 'assets/icons/mic-off.svg';
+  static const String minus = 'assets/icons/minus.svg';
+  static const String more = 'assets/icons/more.svg';
+  static const String plus = 'assets/icons/plus.svg';
+  static const String polygon = 'assets/icons/polygon.svg';
+  static const String question = 'assets/icons/question.svg';
+  static const String search = 'assets/icons/search.svg';
+  static const String send = 'assets/icons/send.svg';
+  static const String share = 'assets/icons/share.svg';
+  static const String smile = 'assets/icons/smile.svg';
+  static const String star = 'assets/icons/star.svg';
+  static const String tag = 'assets/icons/Tag.svg';
+  static const String user = 'assets/icons/user.svg';
+  static const String volume = 'assets/icons/volume.svg';
+  static const String watch = 'assets/icons/watch.svg';
+}
