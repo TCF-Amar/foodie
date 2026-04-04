@@ -1,7 +1,7 @@
-import 'package:calling_app/core/errors/failure.dart';
-import 'package:calling_app/core/utils/result.dart';
-import 'package:calling_app/features/auth/data/datasource/auth_remote_datasource.dart';
-import 'package:calling_app/features/auth/domain/repositories/auth_repository.dart';
+import 'package:foodie/core/errors/failure.dart';
+import 'package:foodie/core/utils/result.dart';
+import 'package:foodie/features/auth/data/datasource/auth_remote_datasource.dart';
+import 'package:foodie/features/auth/domain/repositories/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:logger/logger.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';

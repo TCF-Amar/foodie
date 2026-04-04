@@ -31,19 +31,20 @@ class AppSvg extends StatelessWidget {
   final double? height;
   final BoxFit fit;
   final Color? color;
+  static const double _defaultSize = 24.0;
   final Widget? placeholder;
   final Widget? errorWidget;
   final _SvgType _type;
 
   Widget get _fallbackPlaceholder => SizedBox(
-    width: width,
-    height: height,
+    width: width ?? _defaultSize,
+    height: height ?? _defaultSize,
     child: const Center(child: CircularProgressIndicator(strokeWidth: 2)),
   );
 
   Widget get _fallbackError => SizedBox(
-    width: width,
-    height: height,
+    width: width ?? _defaultSize,
+    height: height ?? _defaultSize,
     child: const Center(
       child: Icon(Icons.broken_image_outlined, color: Colors.grey),
     ),
@@ -57,16 +58,16 @@ class AppSvg extends StatelessWidget {
     return switch (_type) {
       _SvgType.asset => SvgPicture.asset(
         path,
-        width: width,
-        height: height,
+        width: width ?? _defaultSize,
+        height: height ?? _defaultSize,
         fit: fit,
         colorFilter: _colorFilter,
         placeholderBuilder: (_) => placeholder ?? _fallbackPlaceholder,
       ),
       _SvgType.network => SvgPicture.network(
         path,
-        width: width,
-        height: height,
+        width: width ?? _defaultSize,
+        height: height ?? _defaultSize,
         fit: fit,
         colorFilter: _colorFilter,
         placeholderBuilder: (_) => placeholder ?? _fallbackPlaceholder,

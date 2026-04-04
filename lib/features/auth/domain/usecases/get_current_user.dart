@@ -1,4 +1,4 @@
-import 'package:calling_app/features/auth/domain/repositories/auth_repository.dart';
+import 'package:foodie/features/auth/domain/repositories/auth_repository.dart';
 
 class GetCurrentUser {
   final AuthRepository repo;

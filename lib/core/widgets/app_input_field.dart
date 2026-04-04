@@ -1,4 +1,4 @@
-import 'package:calling_app/core/constant/colors/app_colors.dart';
+import 'package:foodie/core/constant/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

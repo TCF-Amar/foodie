@@ -1,5 +1,5 @@
-import 'package:calling_app/core/routes/app_routes.dart';
-import 'package:calling_app/core/supabase/init_supabase.dart';
+import 'package:foodie/core/routes/app_routes.dart';
+import 'package:foodie/core/supabase/init_supabase.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

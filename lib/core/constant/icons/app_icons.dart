@@ -32,4 +32,5 @@
   static const String user = 'assets/icons/user.svg';
   static const String volume = 'assets/icons/volume.svg';
   static const String watch = 'assets/icons/watch.svg';
+  static const String bag = 'assets/icons/bag.svg';
 }

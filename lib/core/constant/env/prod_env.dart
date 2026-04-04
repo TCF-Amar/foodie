@@ -1,4 +1,4 @@
-import 'package:calling_app/core/constant/env/app_env.dart';
+import 'package:foodie/core/constant/env/app_env.dart';
 
 class ProdEnv implements AppEnv {
   @override

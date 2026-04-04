@@ -1,10 +1,10 @@
-import 'package:calling_app/core/constant/env/env_config.dart';
-import 'package:calling_app/core/dependency/init_di.dart';
-import 'package:calling_app/core/routes/app_router.dart';
-import 'package:calling_app/core/supabase/init_supabase.dart';
-import 'package:calling_app/core/theme/app_theme.dart';
+import 'package:foodie/core/constant/env/env_config.dart';
+import 'package:foodie/core/dependency/init_di.dart';
+import 'package:foodie/core/routes/app_router.dart';
+import 'package:foodie/core/supabase/init_supabase.dart';
+import 'package:foodie/core/theme/app_theme.dart';
 
-import 'package:calling_app/core/widgets/index.dart';
+import 'package:foodie/core/widgets/index.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -34,7 +34,7 @@ class MainApp extends StatelessWidget {
       scaffoldMessengerKey: AppKeys.messengerKey,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       routerConfig: AppRouter.router,
       // initialRoute: AppRoutes.login.path,
     );

@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'package:calling_app/core/routes/app_routes.dart';
-import 'package:calling_app/core/widgets/app_snack_bar.dart';
-import 'package:calling_app/features/auth/domain/usecases/get_current_user.dart';
-import 'package:calling_app/features/auth/domain/usecases/send_otp.dart';
-import 'package:calling_app/features/auth/domain/usecases/verify_otp.dart';
+import 'package:foodie/core/routes/app_routes.dart';
+import 'package:foodie/core/widgets/app_snack_bar.dart';
+import 'package:foodie/features/auth/domain/usecases/get_current_user.dart';
+import 'package:foodie/features/auth/domain/usecases/send_otp.dart';
+import 'package:foodie/features/auth/domain/usecases/verify_otp.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';

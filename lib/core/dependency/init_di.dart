@@ -1,5 +1,5 @@
-import 'package:calling_app/core/constant/env/env_config.dart';
-import 'package:calling_app/features/auth/presentation/bindings/auth_bindings.dart';
+import 'package:foodie/core/constant/env/env_config.dart';
+import 'package:foodie/features/auth/presentation/bindings/auth_bindings.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 

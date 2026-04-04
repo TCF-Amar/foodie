@@ -1,6 +1,6 @@
 // app_bottom_sheet.dart
-import 'package:calling_app/core/constant/colors/app_colors.dart';
-import 'package:calling_app/core/widgets/app_keys.dart';
+import 'package:foodie/core/constant/colors/app_colors.dart';
+import 'package:foodie/core/widgets/app_keys.dart';
 import 'package:flutter/material.dart';
 import 'app_text.dart';
 

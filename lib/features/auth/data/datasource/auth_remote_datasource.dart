@@ -1,4 +1,4 @@
-import 'package:calling_app/core/supabase/init_supabase.dart';
+import 'package:foodie/core/supabase/init_supabase.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 abstract class AuthRemoteDatasource {

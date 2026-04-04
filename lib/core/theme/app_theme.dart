@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:calling_app/core/constant/colors/app_colors.dart';
+import 'package:foodie/core/constant/colors/app_colors.dart';
 
 abstract final class AppTheme {
   static const String _font = 'Poppins';

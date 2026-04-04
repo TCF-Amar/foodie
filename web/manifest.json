@@ -1,6 +1,6 @@
 {
-    "name": "calling_app",
-    "short_name": "calling_app",
+    "name": "foodie",
+    "short_name": "foodie",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

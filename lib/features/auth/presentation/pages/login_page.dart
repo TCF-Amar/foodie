@@ -1,7 +1,7 @@
-import 'package:calling_app/core/constant/colors/app_colors.dart';
-import 'package:calling_app/core/constant/images/app_images.dart';
-import 'package:calling_app/core/widgets/index.dart';
-import 'package:calling_app/features/auth/presentation/controller/auth_controller.dart';
+import 'package:foodie/core/constant/colors/app_colors.dart';
+import 'package:foodie/core/constant/images/app_images.dart';
+import 'package:foodie/core/widgets/index.dart';
+import 'package:foodie/features/auth/presentation/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';

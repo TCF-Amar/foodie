@@ -1,3 +1,3 @@
-# calling_app
+# foodie
 
 A new Flutter project.

@@ -1,4 +1,4 @@
-import 'package:calling_app/core/constant/env/env_config.dart';
+import 'package:foodie/core/constant/env/env_config.dart';
 import 'package:logger/logger.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
