@@ -1,4 +1,3 @@
-
 import 'package:foodie/core/widgets/index.dart';
 import 'package:flutter/material.dart';
 
@@ -37,23 +36,10 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           color: iconColor,
         ),
       ),
-      title: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AppText.extraLarge("DELIVER TO", color: AppColors.accent200),
-          Row(
-            spacing: 8,
-            children: [
-              AppText.small("Current Location"),
-              AppSvg.asset(
-                AppIcons.polygon,
-                width: 12,
-                height: 12,
-                color: iconColor,
-              ),
-            ],
-          ),
-        ],
+      title: AppText.extraLarge(
+        "FOODIE",
+        color: AppColors.accent200,
+        fontSize: 22,
       ),
       actions: [
         AppContainer.circle(

@@ -34,7 +34,7 @@ class MainApp extends StatelessWidget {
       scaffoldMessengerKey: AppKeys.messengerKey,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       routerConfig: AppRouter.router,
       // initialRoute: AppRoutes.login.path,
     );

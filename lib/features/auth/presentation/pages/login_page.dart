@@ -85,6 +85,7 @@ class LoginPage extends GetView<AuthController> {
                             prefixText: '+91 ',
                             fillColor: AppColors.bgSecondary,
                             maxLength: 10,
+                            textColor: AppColors.textPrimary,
                           ),
                           AppButton(
                             width: double.infinity,

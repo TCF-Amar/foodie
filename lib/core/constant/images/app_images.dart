@@ -3,4 +3,5 @@ class AppImages {
   static const String google = 'assets/images/google.png';
   static const String email = 'assets/images/email.png';
 
+  static String get logo => 'assets/images/app_icon.png';
 }

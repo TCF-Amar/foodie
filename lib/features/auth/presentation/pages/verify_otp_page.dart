@@ -78,6 +78,7 @@ class VerifyOtpPage extends GetView<AuthController> {
                         "Enter the 6-digit code we sent to\n+91 ${controller.phoneNumberController.text}",
                         color: AppColors.textOnDark.withValues(alpha: 0.8),
                         fontSize: 16,
+
                         fontWeight: FontWeight.w400,
                         textAlign: TextAlign.center,
                       ),
@@ -120,6 +121,8 @@ class VerifyOtpPage extends GetView<AuthController> {
                               child: AppInputField.otp(
                                 controller: controller.otpControllers[index],
                                 focusNode: controller.otpFocusNodes[index],
+                                fillColor: AppColors.bgSecondary,
+                                textColor: AppColors.textPrimary,
                                 onChanged: (value) {
                                   // Auto-focus next/previous field
                                   if (value.isNotEmpty && index < 5) {

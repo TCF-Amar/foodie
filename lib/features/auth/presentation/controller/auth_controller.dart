@@ -83,6 +83,9 @@ class AuthController extends GetxController {
       (_) {
         isLoading.value = false;
         AppSnackBar.success(context, "OTP sent successfully");
+        if (context.mounted) {
+          context.goNamed(AppRoutes.verifyOtp.name);
+        }
         startResendTimer();
       },
     );

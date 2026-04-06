@@ -1,13 +1,17 @@
-import 'package:foodie/core/utils/time_variant.dart';
+import 'package:crystal_navigation_bar/crystal_navigation_bar.dart';
+import 'package:foodie/core/widgets/modern_refresh_indicator.dart';
 import 'package:foodie/core/widgets/index.dart';
-// import 'package:foodie/features/auth/presentation/controller/auth_controller.dart';
+import 'package:foodie/features/home/presentation/home_controller.dart';
 import 'package:foodie/features/home/presentation/widgets/categories_list.dart';
 import 'package:foodie/features/home/presentation/widgets/home_app_bar.dart';
+import 'package:foodie/features/home/presentation/widgets/home_hero.dart';
+import 'package:foodie/features/home/presentation/widgets/best_seller.dart';
 import 'package:foodie/features/home/presentation/widgets/recommended_items.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 // import 'package:get/get.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
 
   @override
@@ -16,80 +20,61 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: HomeAppBar(),
-      body: CustomScrollView(
-        slivers: [
-          // keep the outer AppBar at top and add inner floating SliverAppBar for search etc.
-          SliverAppBar(
-            pinned: true,
-            floating: true,
-            snap: true,
-            automaticallyImplyLeading: false,
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-            elevation: 0,
-            surfaceTintColor: Colors.transparent,
-            toolbarHeight: kMinInteractiveDimension * 2.5,
-            flexibleSpace: SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 8,
-                ),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        AppText.extraLarge(
-                          "Hey User, ",
-                          fontWeight: FontWeight.normal,
-                        ),
-                        AppText.extraLarge(
-                          "${TimeVariant.greeting}!",
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ],
+      body: ModernRefreshIndicator(
+        // enableHaptic: true,
+        onRefresh: () async {
+          await controller.refreshData();
+        },
+        child: Stack(
+          children: [
+            CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(child: HomeHero()),
+                SliverAppBar(
+                  pinned: true,
+                  floating: true,
+                  snap: true,
+                  automaticallyImplyLeading: false,
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                  elevation: 0,
+                  surfaceTintColor: Colors.transparent,
+                  toolbarHeight: 68,
+                  flexibleSpace: const Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.0,
+                      vertical: 8.0,
                     ),
-                    AppContainer.pill(
-                      margin: const EdgeInsets.only(top: 12),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 16,
-                      ),
-                      alignment: Alignment.center,
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.white.withValues(alpha: 0.1)
-                          : Colors.black.withValues(alpha: 0.05),
-                      borderRadius: BorderRadius.circular(10),
+                    child: HomeSearchBar(),
+                  ),
+                ),
+                SliverToBoxAdapter(child: CategoriesList()),
 
-                      child: Row(
-                        spacing: 8,
-                        children: [
-                          AppSvg.asset(
-                            AppIcons.search,
-                            // width: 12,
-                            // height: 12,
-                            color: Theme.of(
-                              context,
-                            ).textTheme.bodyMedium?.color,
-                          ),
-                          AppText.medium(
-                            "Search dishes",
-                            color: Theme.of(
-                              context,
-                            ).textTheme.bodyMedium?.color,
-                            // margin: const EdgeInsets.only(left: 8),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+                SliverToBoxAdapter(child: RecommendedItems()),
+
+                SliverToBoxAdapter(child: ListItems()),
+              ],
             ),
-          ),
-          SliverToBoxAdapter(child: CategoriesList()),
-
-          SliverToBoxAdapter(child: RecommendedItems()),
-        ],
+            // Positioned(
+            //   bottom: 0,
+            //   left: 0,
+            //   right: 0,
+            //   child: SafeArea(
+            //     child: AppContainer.pill(
+            //       margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            //       height: 50,
+            //       child: Row(
+            //         children: [
+            //           AppSvg.asset(AppIcons.home),
+            //           // AppSvg.asset(AppIcons.bag),
+            //           AppSvg.asset(AppIcons.heart),
+            //           AppSvg.asset(AppIcons.user),
+            //         ],
+            //       ),
+            //     ),
+            //   ),
+            // ),
+          ],
+        ),
       ),
       drawer: Drawer(
         // clipBehavior: .none,
@@ -116,6 +101,14 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: CrystalNavigationBar(
+        items: [
+          CrystalNavigationBarItem(icon: Icon(Icons.home)),
+          CrystalNavigationBarItem(icon: Icon(Icons.search)),
+          // CrystalNavigationBarItem(icon: Icon(Icons.bag)),
+          CrystalNavigationBarItem(icon: Icon(Icons.person)),
+        ],
       ),
     );
   }

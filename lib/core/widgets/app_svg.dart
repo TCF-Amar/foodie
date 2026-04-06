@@ -42,6 +42,7 @@ class AppSvg extends StatelessWidget {
     child: const Center(child: CircularProgressIndicator(strokeWidth: 2)),
   );
 
+  // ignore: unused_element
   Widget get _fallbackError => SizedBox(
     width: width ?? _defaultSize,
     height: height ?? _defaultSize,
