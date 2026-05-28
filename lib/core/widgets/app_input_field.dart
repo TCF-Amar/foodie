@@ -623,7 +623,7 @@ class _AppInputFieldState extends State<AppInputField> {
         builder: (_, val, _) => val.text.isEmpty
             ? const SizedBox.shrink()
             : GestureDetector(
-                onTap: () => widget.controller!.clear(),
+                onTap: () => widget.controller?.clear(),
                 child: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12),
                   child: Icon(Icons.close_rounded, size: 18),

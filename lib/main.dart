@@ -1,7 +1,6 @@
 import 'package:foodie/core/constant/env/env_config.dart';
 import 'package:foodie/core/dependency/init_di.dart';
 import 'package:foodie/core/routes/app_router.dart';
-import 'package:foodie/core/supabase/init_supabase.dart';
 import 'package:foodie/core/theme/app_theme.dart';
 
 import 'package:foodie/core/widgets/index.dart';
@@ -18,7 +17,6 @@ void main() async {
   const env = String.fromEnvironment('ENV', defaultValue: 'dev');
   EnvConfig.init(env);
 
-  await SupabaseService.initSupabase();
   InitDi.init();
 
   runApp(const MainApp());
@@ -34,7 +32,7 @@ class MainApp extends StatelessWidget {
       scaffoldMessengerKey: AppKeys.messengerKey,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       routerConfig: AppRouter.router,
       // initialRoute: AppRoutes.login.path,
     );

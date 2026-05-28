@@ -65,6 +65,7 @@ class HomeHero extends StatelessWidget {
   Widget _buildBannerItem(BuildContext context, Map<String, dynamic> banner) {
     return AppContainer.card(
       width: double.infinity,
+      padding: EdgeInsets.zero,
       borderRadius: BorderRadius.circular(24),
 
       image: DecorationImage(
@@ -75,16 +76,7 @@ class HomeHero extends StatelessWidget {
       child: Stack(
         children: [
           AppContainer.filled(color: Colors.black.withValues(alpha: 0.5)),
-          // Background icon
-          Positioned(
-            right: -30,
-            top: -30,
-            child: Icon(
-              Icons.fastfood,
-              size: 160,
-              color: Colors.white.withValues(alpha: 0.1),
-            ),
-          ),
+
           // Content
           Padding(
             padding: const EdgeInsets.all(24),
@@ -158,19 +150,25 @@ class HomeSearchBar extends StatelessWidget {
         children: [
           Icon(
             Icons.search,
-            color: Theme.of(
-              context,
-            ).textTheme.bodyMedium?.color?.withValues(alpha: 0.5),
+            color:
+                Theme.of(
+                  context,
+                ).textTheme.bodyMedium?.color?.withValues(alpha: 0.5) ??
+                AppColors.textHint,
           ),
           const SizedBox(width: 8),
           Expanded(
             child: Text(
               "Search your favorite dishes...",
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Theme.of(
-                  context,
-                ).textTheme.bodyMedium?.color?.withValues(alpha: 0.5),
-              ),
+              style:
+                  Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color:
+                        Theme.of(
+                          context,
+                        ).textTheme.bodyMedium?.color?.withValues(alpha: 0.5) ??
+                        AppColors.textHint,
+                  ) ??
+                  TextStyle(color: AppColors.textHint, fontSize: 15),
             ),
           ),
         ],

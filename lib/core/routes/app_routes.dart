@@ -16,5 +16,11 @@ class AppRoutes {
     name: 'register',
     path: '/register',
   );
+  static final RouteModel location = RouteModel(
+    name: 'location',
+    path: '/location',
+  );
   static final RouteModel home = RouteModel(name: 'home', path: '/home');
+
+  static final RouteModel camera = RouteModel(name: 'camera', path: '/camera');
 }

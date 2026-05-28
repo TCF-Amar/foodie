@@ -1,9 +1,11 @@
 import "package:foodie/core/routes/app_routes.dart";
 import "package:foodie/core/widgets/app_keys.dart";
+import "package:foodie/features/auth/presentation/pages/location_page.dart";
 import "package:foodie/features/auth/presentation/pages/login_page.dart";
 import "package:foodie/features/auth/presentation/pages/splash_screen.dart";
 import "package:foodie/features/auth/presentation/pages/verify_otp_page.dart";
-import "package:foodie/features/home/presentation/pages/home_page.dart";
+import "package:foodie/features/home/presentation/pages/camera_screen.dart";
+import "package:foodie/features/main/main_screen.dart";
 import "package:go_router/go_router.dart";
 import "package:supabase_flutter/supabase_flutter.dart";
 
@@ -45,11 +47,21 @@ class AppRouter {
         name: AppRoutes.verifyOtp.name,
         builder: (context, state) => const VerifyOtpPage(),
       ),
+      GoRoute(
+        path: AppRoutes.location.path,
+        name: AppRoutes.location.name,
+        builder: (context, state) => const LocationPage(),
+      ),
 
       GoRoute(
         path: AppRoutes.home.path,
         name: AppRoutes.home.name,
-        builder: (context, state) => const HomePage(),
+        builder: (context, state) => const MainScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.camera.path,
+        name: AppRoutes.camera.name,
+        builder: (context, state) => const CameraScreen(),
       ),
     ],
   );

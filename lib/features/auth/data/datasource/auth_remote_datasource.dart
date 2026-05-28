@@ -6,22 +6,24 @@ abstract class AuthRemoteDatasource {
   Future<AuthResponse> verifyOtp(String phoneNumber, String otp);
   User? getCurrentUser();
   Session? getCurrentSession();
-  // Future<void> logout();
+  Future<void> logout();
 }
 
 class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
   final supabase = SupabaseService.client;
 
   AuthRemoteDatasourceImpl();
+  static const String _defaultCountryCode = '+91';
+
   @override
   Future<void> login(String phoneNumber) async {
-    await supabase.auth.signInWithOtp(phone: "+91$phoneNumber");
+    await supabase.auth.signInWithOtp(phone: "${_defaultCountryCode}$phoneNumber");
   }
 
   @override
   Future<AuthResponse> verifyOtp(String phoneNumber, String otp) async {
     return await supabase.auth.verifyOTP(
-      phone: "+91$phoneNumber",
+      phone: "${_defaultCountryCode}$phoneNumber",
       token: otp,
       type: OtpType.sms,
     );
@@ -37,9 +39,8 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
     return supabase.auth.currentSession;
   }
 
-  // @override
-  // Future<void> logout() {
-  //   // TODO: implement logout
-  //   throw UnimplementedError();
-  // }
+  @override
+  Future<void> logout() async {
+    await supabase.auth.signOut();
+  }
 }

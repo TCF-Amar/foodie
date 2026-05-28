@@ -19,14 +19,13 @@ class RecommendedItems extends StatelessWidget {
             ),
           ),
           SizedBox(
-            // (card height × 2 rows) + (row spacing × 1) + (label/time heights)
-            height: 320,
+            height: 300,
             child: GridView.builder(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.symmetric(horizontal: 16),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, // 2 rows
-                crossAxisSpacing: 12, // vertical gap between rows
+                // crossAxisSpacing: 4, // vertical gap between rows
                 mainAxisSpacing: 12, // horizontal gap between columns
                 mainAxisExtent: 130, // card width
               ),

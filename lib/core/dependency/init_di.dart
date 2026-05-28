@@ -1,8 +1,8 @@
-import 'package:foodie/core/constant/env/env_config.dart';
 import 'package:foodie/features/auth/presentation/bindings/auth_bindings.dart';
 import 'package:foodie/features/home/presentation/bindings/home_binding.dart';
-import 'package:get/get.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:foodie/core/supabase/init_supabase.dart';
+import 'package:foodie/features/main/main_controller.dart';
+import 'package:foodie/features/menu/presentation/bindings/menu_binding.dart';
 
 class InitDi {
   static void init() {
@@ -10,17 +10,17 @@ class InitDi {
     _featureDi();
   }
 
-  static void _coreDi() {
-    Get.put(
-      SupabaseClient(
-        EnvConfig.instance.supabaseUrl,
-        EnvConfig.instance.supabaseAnonKey,
-      ),
-    );
+  static void _coreDi() async {
+    await SupabaseService.initSupabase();
+
+    // Supabase is already initialized in SupabaseService.initSupabase()
+    // No need to create a duplicate client - use SupabaseService.client
   }
 
   static void _featureDi() {
+    MainBinding.init();
     AuthBindings.init();
     HomeBinding.init();
+    MenuBinding.init();
   }
 }

@@ -91,7 +91,7 @@ class FoodItemModel {
         ? (j['discounted_price'] as num).toDouble()
         : null,
     discountPercent: (j['discount_percent'] as num?)?.toDouble() ?? 0,
-    images: List<String>.from(j['images'] ?? []),
+    images: j['images'] is List ? List<String>.from(j['images']) : [],
     isVeg: j['is_veg'] as bool? ?? true,
     isVegan: j['is_vegan'] as bool? ?? false,
     isJain: j['is_jain'] as bool? ?? false,

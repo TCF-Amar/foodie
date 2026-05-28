@@ -39,6 +39,7 @@ class AuthController extends GetxController {
   void onInit() {
     super.onInit();
     checkCurrentUser();
+    
   }
 
   @override

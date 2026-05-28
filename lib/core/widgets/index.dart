@@ -10,6 +10,7 @@ export 'app_text.dart';
 export 'app_tooltip.dart';
 export "app_svg.dart";
 export "app_image.dart";
+export 'item_card.dart';
 
 export "package:foodie/core/constant/icons/app_icons.dart";
 export "package:foodie/core/constant/images/app_images.dart";

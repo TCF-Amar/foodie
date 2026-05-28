@@ -19,6 +19,8 @@ class AppContainer extends StatelessWidget {
   final Color? color;
   final Color? borderColor;
   final double borderWidth;
+  final BoxBorder? border;
+  final AppBorderSide borderSide;
   final List<double>? dashPattern; // null = solid border
   final BorderRadius? borderRadius;
   final List<BoxShadow>? boxShadow;
@@ -73,6 +75,8 @@ class AppContainer extends StatelessWidget {
     this.color,
     this.borderColor,
     this.borderWidth = 0,
+    this.border,
+    this.borderSide = AppBorderSide.all,
     this.dashPattern,
     this.borderRadius,
     this.boxShadow,
@@ -111,6 +115,8 @@ class AppContainer extends StatelessWidget {
     this.color,
     this.borderColor,
     this.borderWidth = 1,
+    this.border,
+    this.borderSide = AppBorderSide.all,
     this.dashPattern,
     this.borderRadius,
     this.boxShadow,
@@ -149,6 +155,8 @@ class AppContainer extends StatelessWidget {
     this.color = Colors.transparent,
     this.borderColor,
     this.borderWidth = 1.5,
+    this.border,
+    this.borderSide = AppBorderSide.all,
     this.dashPattern,
     this.borderRadius,
     this.boxShadow,
@@ -187,6 +195,8 @@ class AppContainer extends StatelessWidget {
     this.color,
     this.borderColor,
     this.borderWidth = 0,
+    this.border,
+    this.borderSide = AppBorderSide.all,
     this.dashPattern,
     this.borderRadius,
     this.boxShadow,
@@ -225,6 +235,8 @@ class AppContainer extends StatelessWidget {
     this.color,
     this.borderColor,
     this.borderWidth = 0,
+    this.border,
+    this.borderSide = AppBorderSide.all,
     this.dashPattern,
     this.borderRadius,
     this.boxShadow,
@@ -263,6 +275,8 @@ class AppContainer extends StatelessWidget {
     this.color,
     this.borderColor,
     this.borderWidth = 0,
+    this.border,
+    this.borderSide = AppBorderSide.all,
     this.dashPattern,
     this.borderRadius,
     this.boxShadow,
@@ -301,6 +315,8 @@ class AppContainer extends StatelessWidget {
     this.color = Colors.transparent,
     this.borderColor,
     this.borderWidth = 1.5,
+    this.border,
+    this.borderSide = AppBorderSide.all,
     this.dashPattern = const [6, 4],
     this.borderRadius,
     this.boxShadow,
@@ -339,6 +355,8 @@ class AppContainer extends StatelessWidget {
     this.color,
     this.borderColor,
     this.borderWidth = 0,
+    this.border,
+    this.borderSide = AppBorderSide.all,
     this.dashPattern,
     this.borderRadius,
     this.boxShadow,
@@ -389,15 +407,37 @@ class AppContainer extends StatelessWidget {
     }
 
     // ── Border ────────────────────────────────
-    BoxBorder? border;
-    if (borderWidth > 0 && dashPattern == null) {
-      border = Border.all(color: resolvedBorderColor, width: borderWidth);
+    BoxBorder? resolvedBorder = border;
+    if (resolvedBorder == null && borderWidth > 0 && dashPattern == null) {
+      if (borderSide == AppBorderSide.all) {
+        resolvedBorder = Border.all(color: resolvedBorderColor, width: borderWidth);
+      } else if (borderSide != AppBorderSide.none) {
+        final side = BorderSide(color: resolvedBorderColor, width: borderWidth);
+        resolvedBorder = Border(
+          top: (borderSide == AppBorderSide.top ||
+                  borderSide == AppBorderSide.topBottom)
+              ? side
+              : BorderSide.none,
+          bottom: (borderSide == AppBorderSide.bottom ||
+                  borderSide == AppBorderSide.topBottom)
+              ? side
+              : BorderSide.none,
+          left: (borderSide == AppBorderSide.left ||
+                  borderSide == AppBorderSide.leftRight)
+              ? side
+              : BorderSide.none,
+          right: (borderSide == AppBorderSide.right ||
+                  borderSide == AppBorderSide.leftRight)
+              ? side
+              : BorderSide.none,
+        );
+      }
     }
 
     // ── Decoration ────────────────────────────
     final decoration = BoxDecoration(
       color: gradient != null ? null : resolvedColor,
-      border: border,
+      border: resolvedBorder,
       borderRadius: shape == BoxShape.circle ? null : resolvedBorderRadius,
       boxShadow: resolvedBoxShadow,
       gradient: gradient,
@@ -625,3 +665,8 @@ class _DashedBorderPainter extends CustomPainter {
       old.dashPattern != dashPattern ||
       old.borderRadius != borderRadius;
 }
+
+// ─────────────────────────────────────────────────
+//  ENUMS
+// ─────────────────────────────────────────────────
+enum AppBorderSide { all, top, bottom, left, right, topBottom, leftRight, none }

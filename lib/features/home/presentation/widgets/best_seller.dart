@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/core/models/food_item_model.dart';
-import 'package:foodie/core/widgets/app_container.dart';
+import 'package:foodie/core/widgets/index.dart';
 import 'package:foodie/core/widgets/item_card.dart';
 
 class ListItems extends StatelessWidget {
@@ -68,16 +68,18 @@ class ListItems extends StatelessWidget {
       updatedAt: DateTime(2024, 6, 1),
     );
     return AppContainer(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AppContainer(
-            child: Column(
-              children: [
-                ItemCard(item: burger),
-                ItemCard(item: burger),
-              ],
-            ),
+          AppText.large("MOST ORDERED", fontWeight: FontWeight.bold),
+          ListView.separated(
+            physics: const NeverScrollableScrollPhysics(),
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            itemCount: 11,
+            shrinkWrap: true,
+            separatorBuilder: (_, __) => const SizedBox(height: 16),
+            itemBuilder: (_, index) => ItemCard(item: burger),
           ),
         ],
       ),

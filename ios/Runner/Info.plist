@@ -66,5 +66,65 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera access to take photos</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need location to show nearby restaurants</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need photo access to upload images</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need microphone for voice search</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We need location for background updates</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need location for background updates</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>We need bluetooth for nearby sharing</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We need bluetooth for nearby sharing</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>We need calendar access for event reminders</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>We need full calendar access for event management</string>
+	<key>NSContactsUsageDescription</key>
+	<string>We need contacts access for sharing</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>We need speech recognition for voice commands</string>
+	<key>NSMotionUsageDescription</key>
+	<string>We need motion access for fitness tracking</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>We need apple events access for automation</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>We need apple music access for music integration</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera access to take photos</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need location to show nearby restaurants</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need photo access to upload images</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need microphone for voice search</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We need location for background updates</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need location for background updates</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>We need bluetooth for nearby sharing</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We need bluetooth for nearby sharing</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>We need calendar access for event reminders</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>We need full calendar access for event management</string>
+	<key>NSContactsUsageDescription</key>
+	<string>We need contacts access for sharing</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>We need speech recognition for voice commands</string>
+	<key>NSMotionUsageDescription</key>
+	<string>We need motion access for fitness tracking</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>We need apple events access for automation</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>We need apple music access for music integration</string>
 </dict>
 </plist>
